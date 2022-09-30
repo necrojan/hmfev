@@ -3,7 +3,7 @@
     <div class="mb-10">
       <p>Player: {{ name }}</p>
     </div>
-    <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
+    <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden mb-5">
       <table v-if="userAttempts.length > 0" class="min-w-full leading-normal">
         <thead>
         <tr>
@@ -36,6 +36,7 @@
         </tbody>
       </table>
     </div>
+    <button @click="restartGame" class="rounded-lg px-4 py-2 bg-blue-500 text-blue-100 hover:bg-blue-600 duration-300">Restart Game</button>
   </div>
 </template>
 
@@ -99,6 +100,11 @@ export default {
           })
         }
       })
+    },
+
+    restartGame() {
+      this.$parent.refreshGame();
+      this.$parent.getWordChallenge();
     }
   }
 }

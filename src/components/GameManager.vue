@@ -106,11 +106,19 @@ export default {
       })
     },
 
+    refreshGame() {
+      this.name = '';
+      this.guess = '';
+      this.charList = [];
+      this.incorrectChars = [];
+      this.maxAttempt = 5;
+    },
+
 
     onEnter() {
       const charGuess = this.guess.toLocaleLowerCase();
       this.charList.push(charGuess);
-      if (!this.word.includes(charGuess)) {
+      if (!this.word.includes(charGuess) && !this.incorrectChars.includes(charGuess)) {
         this.incorrectChars.push(charGuess);
         this.maxAttempt--;
       }
