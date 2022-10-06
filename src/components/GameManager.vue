@@ -1,6 +1,5 @@
 <template>
     <div class="flex flex-col justify-center items-center">
-
       <div v-if="!endGame && !winner">
         <h1 class="text-grey-700 text-3xl mb-5">Guess the word</h1>
         <div class="flex">
@@ -46,14 +45,17 @@
           :success="false"
         />
       </div>
+      <hr />
+      <Board />
   </div>
 </template>
 
 <script>
 import ChallengeAttempt from "./ChallengeAttempt";
+import Board from "./Board";
 export default {
   name: "GameManager",
-  components: {ChallengeAttempt},
+  components: {ChallengeAttempt, Board},
   data () {
     return {
       name: '',

@@ -7,12 +7,14 @@
 <script>
 import GameManager from './components/GameManager'
 import ChallengeAttempt from './components/ChallengeAttempt'
+import Board from './components/Board';
 
 export default {
   name: 'App',
   components: {
     GameManager,
-    ChallengeAttempt
+    ChallengeAttempt,
+    Board
   }
 }
 </script>
